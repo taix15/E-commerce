@@ -40,6 +40,7 @@ const ProductList = () => {
             <p className="text-2xl font-bold">{product.price.toFixed(2)} €</p>
           </CardContent>
           <CardFooter className="flex justify-between items-center">
+         
             <Select
               value={(selectedQuantities[product.id] || 0).toString()}
               onValueChange={(value) => handleQuantityChange(product.id, parseInt(value))}
@@ -55,7 +56,9 @@ const ProductList = () => {
                 ))}
               </SelectContent>
             </Select>
-            <Button onClick={() => handleAddToCart(product)}>
+
+            
+            <Button onClick={() => handleAddToCart(product)} className="ml-4">
               {getItemQuantity(product.id) > 0 ? 'Actualizar carrito' : 'Añadir al carrito'}
             </Button>
           </CardFooter>
